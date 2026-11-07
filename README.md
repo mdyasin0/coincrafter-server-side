@@ -1,4 +1,4 @@
-# Micro-Task and Earning Platform – Server
+# coincrafter– Server
 
 A RESTful backend application for a Micro-Task and Earning Platform, built with Node.js, Express.js, and MongoDB. The server manages user accounts, role-based authorization, task operations, work submissions, coin transactions, payment processing, withdrawal requests, and administrative operations.
 
