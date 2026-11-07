@@ -37,13 +37,6 @@ The application supports three user roles:
 - Support administrative user management operations.
 - Implement user removal and role update functionality.
 
-### B. Authentication and Authorization
-
-- Support authenticated access to protected API resources.
-- Implement server-side authorization middleware.
-- Apply role-based access control for Worker, Buyer, and Admin operations.
-- Restrict administrative operations to authorized Admin accounts.
-- Protect sensitive business operations through server-side permission checks.
 
 ### C. Task Management
 
@@ -185,7 +178,6 @@ The database operations support the platform's task management, account manageme
 - Handle HTTP requests and responses.
 - Implement server-side business logic.
 - Support database operations through API requests.
-- Implement protected API operations using authorization middleware.
 - Support pagination for applicable data retrieval operations.
 - Use environment variables for application configuration and sensitive credentials.
 
@@ -254,14 +246,13 @@ The application uses environment variables to manage sensitive configuration val
 
 Before running the server, create a `.env` file in the server project root and provide the configuration values required by the application.
 
-Typical configuration categories include:
+# mongodb
 
-- Server port.
-- MongoDB connection credentials.
-- Stripe secret key.
-- Other server-side configuration values required by the implementation.
+DB_USER=
+DB_PASS=
+# stripe
 
-Use the exact environment variable names referenced in the server source code.
+STRIPE_SECRET_KEY=
 
 **Security Guidelines:**
 
@@ -269,8 +260,8 @@ Use the exact environment variable names referenced in the server source code.
 - Add `.env` to `.gitignore`.
 - Never expose Stripe secret keys or MongoDB credentials.
 - Keep sensitive configuration values on the server.
-- Validate and authorize protected operations on the server side.
-- Restrict administrative operations to authorized users.
+
+
 
 ---
 
@@ -288,7 +279,7 @@ Follow these instructions to set up the backend project locally.
 ### Step 1: Clone the Repository
 
 ```bash
-git clone YOUR_SERVER_REPOSITORY_URL
+git clone https://github.com/mdyasin0/coincrafter-server-side.git
 ```
 
 ### Step 2: Navigate to the Project Directory
@@ -319,9 +310,7 @@ Review the scripts defined in `package.json` and use the appropriate development
 
 ### Step 6: Start the Server
 
-Run the development or production script configured in the project's `package.json`.
-
-The server will start using the configured application port.
+Run command "nodemon index.js"
 
 ---
 
@@ -349,7 +338,6 @@ Specific API routes, HTTP methods, request parameters, and response structures s
 - Backend development using Node.js and Express.js.
 - RESTful API architecture.
 - MongoDB-based application data management.
-- Role-based authorization.
 - Task creation and management workflows.
 - Submission review and reward allocation.
 - Coin-based business logic.
@@ -357,7 +345,7 @@ Specific API routes, HTTP methods, request parameters, and response structures s
 - Worker withdrawal management.
 - Administrative operations.
 - Environment-based configuration.
-- API pagination.
+
 
 ---
 
